@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: ["https://ecommerce-website-using-react-cyan.vercel.app"],
+    origin: ["https://ecommerce-website-using-react-cyan.vercel.app/"],
     methods:["POST", "GET", "DELETE"],
     credentials: true, 
 }));
