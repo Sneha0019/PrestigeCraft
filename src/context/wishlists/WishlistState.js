@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import WishlistContext from './WishlistContext';
 
 const WishlistState = (props) => {
-    const host = 'http://localhost:5000';
+    const host = 'https://ecommerce-website-full-stack.vercel.app';
     const [wishlistproducts, setWishlistProducts] = useState([]);
 
     //----GET ALL PRODUCTS----
