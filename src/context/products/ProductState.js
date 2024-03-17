@@ -4,7 +4,7 @@ import ProductContext from './productContext'
 
 
 const ProductState = (props) => {
-  const host = 'https://ecommerce-website-full-stack.vercel.app';
+  const host = 'https://ecommerce-website-using-react-cyan.vercel.app';
   const [products, setProducts] = useState([]);
 
   //-----GET ALL PRODUCTS
