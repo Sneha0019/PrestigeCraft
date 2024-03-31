@@ -32,6 +32,7 @@ const Cartitem = (props) => {
  const handleAdd = async (e) =>{
   e.preventDefault();
   setControlQuantity(true);
+  console.log('current price is',pricee);
   console.log("ADD is clicked")
   setQuantity(quantity+1);
  }
@@ -52,6 +53,7 @@ const Cartitem = (props) => {
 
  useEffect(()=>{
   if(addquantity){
+
   setPrice(order.items[0].price * quantity);
   }else{
     setPrice(order.items[0].price / quantity);
@@ -82,7 +84,7 @@ const Cartitem = (props) => {
                                     </div>
 
         <p className="card-text">Weight: {order.items[0].productWeight}</p>
-        <p className="card-text">Price: ${order.items[0].price}</p>
+        <p className="card-text">Price: ${pricee}</p>
        
         <p className="card-text"> <i onClick={handleTrash} className="fa-regular fa-trash-can" style={{ color: txtColor, cursor: 'pointer', display:'inline' }}></i> Remove  </p>
         <p className="card-text mx-1"> <i onClick={handleSub} className="fa-solid fa-square-minus" style={{ color: txtColor, cursor: 'pointer' }}></i> Quantity
