@@ -12,7 +12,7 @@ const Cartitem = (props) => {
   //order id acquire for updating order
  const orderId = order._id;
 
-  const [price, setPrice] = useState(order.items[0].price);
+  const [pricee, setPrice] = useState(order.items[0].price);
   const [totalPrice, setTotalPrice] = useState();
   const [addquantity, setControlQuantity] = useState(false);
 
@@ -56,12 +56,12 @@ const Cartitem = (props) => {
   }else{
     setPrice(order.items[0].price / quantity);
   }
- },[quantity, price])
+ },[quantity, pricee])
 
 
  useEffect(()=>{
-  updateOrder(price, quantity, orignalPrice, orderId);
- },[price ,quantity, orignalPrice, orderId])
+  updateOrder(pricee, quantity, orignalPrice, orderId);
+ },[pricee ,quantity, orignalPrice, orderId])
 
 
   return (
