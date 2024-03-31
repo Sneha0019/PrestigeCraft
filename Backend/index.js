@@ -4,11 +4,17 @@ var cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-    origin: ["https://ecommerce-website-using-react-cyan.vercel.app/"],
-    methods:["POST", "GET", "DELETE"],
-    credentials: true, 
-}));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "POST, GET, DELETE");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
+
 
 app.use(express.json());
 app.use("/api/auth/", require("./routes/auth"))
