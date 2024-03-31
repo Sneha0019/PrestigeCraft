@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import OrderContext from './OrderContext'
 
 const OrderState = (props) => {
-    const host = 'https://ecommerce-website-full-stack-eidn9mwm1-snehas-projects-b171f877.vercel.app';
+    const host = 'https://ecommerce-website-full-stack-3.onrender.com';
     const [orders, setOrders] = useState([]);
 
     //----GET ALL PRODUCTS----

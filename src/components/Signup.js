@@ -11,7 +11,7 @@ const Signup = (props) => {
     const handleClick = async(e) =>{
       e.preventDefault();
       const {name, email, password} = credentials;
-    const response = await fetch(`https://ecommerce-website-full-stack.vercel.app/api/auth/createuser`, {
+    const response = await fetch(`https://ecommerce-website-full-stack-3.onrender.com/api/auth/createuser`, {
         method: "POST", 
         headers: {
           "Content-Type": "application/json",
