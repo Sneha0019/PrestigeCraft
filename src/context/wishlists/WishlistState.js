@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import WishlistContext from './WishlistContext';
 
 const WishlistState = (props) => {
-    const host = 'https://ecommerce-website-full-stack-3.onrender.com';
+    const host = 'https://ecommerce-website-full-stack-2.onrender.com';
     const [wishlistproducts, setWishlistProducts] = useState([]);
 
     //----GET ALL PRODUCTS----
