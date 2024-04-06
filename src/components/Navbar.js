@@ -9,7 +9,7 @@ const Navbar = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [query, setQuery] = useState("");
-    const {txtColor} = props;
+    const {txtColor, bgColor} = props;
     const username = localStorage.getItem('username')
 
     const handleLogout = () =>{

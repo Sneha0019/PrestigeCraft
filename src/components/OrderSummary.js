@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import OrderContext from '../context/orders/OrderContext';
+import {loadStripe} from '@stripe/react-stripe-js'
 
 const OrderSummary = (props) => {
     const context = useContext(OrderContext)
@@ -16,10 +17,12 @@ const OrderSummary = (props) => {
      const deliveryFee = calPrice>1? 0.50: 0;
      
     const {txtColor} = props;
+
+
   return (
     <>
           <div className="col-md-10 d-flex justify-content-flex-end">
-                <div className="container mt-2 flex-end" style={{ backgroundColor: '#f4F3F3' }}>
+                <div className="container mt-2 flex-end" style={{ backgroundColor: '#f4F3F3', padding:25 }}>
                     <h4 className='mt-2 mb-3' style={{ color: txtColor }}>ORDER SUMMARY</h4>
                     <div className="d-flex">
                         <div className="container text-flex-start">
@@ -35,6 +38,9 @@ const OrderSummary = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='container mt-2 p-0 d-flex' >
+            <a class="btn p-1 btn-lg flex-end" href="#" role="button"  style={{backgroundColor: txtColor, color: "#fff", width: '83.5%'}}>Pay Now</a>
             </div>
         </>
     

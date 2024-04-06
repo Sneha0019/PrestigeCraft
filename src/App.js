@@ -17,6 +17,7 @@ import Addtocart from "./components/Addtocart";
 import OrderState from "./context/orders/OrderState";
 import WishlistContext from "./context/wishlists/WishlistContext";
 import WishlistState from "./context/wishlists/WishlistState";
+import Footer from "./components/Footer";
 
 
 
@@ -49,6 +50,7 @@ function App() {
        <Route exact path="/wishlist" element={<AddtoWishlist bgColor={bgColor} txtColor={txtColor}/>}/>
        </Routes>
        </div>
+       <Footer bgColor={bgColor} txtColor={txtColor}/>
      </BrowserRouter>
      </ProductState>  
      </OrderState>  

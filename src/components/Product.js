@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import productContext from '../context/products/productContext';
 import Productitem from './Productitem'
 import { useLocation, useNavigate } from 'react-router-dom';
+import Spinner from './spinner';
 
 
 const Product = (props) => {
   const {category} = props;
+  const [loading, setLoading] = useState(true);
   const location = useLocation()
   const context = useContext(productContext);
   console.log(context);
@@ -18,6 +20,7 @@ const Product = (props) => {
 
 
   useEffect(()=>{
+    setLoading(true);
     if(location.pathname==="/ring" || category==="Ring" || query==="Ring"){
     getProductRing();
     }else if(location.pathname==="/earring" || category==="Earrings" || query==="Earrings"){
@@ -35,24 +38,32 @@ const Product = (props) => {
     }else{
       getProducts()
     }
-    
+    setLoading(false);
     //eslint-disable-next-line
   },[location.pathname]);
+  
 
   return (
     <>
       <div className="container">
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
-      {products && products.map(product=> {
-        if(!query || product.productName.includes(query)){
-        return <div className="col" key={product._id}>
-         { console.log("caling product item")}
-          <Productitem key={product._id} product={product}/>
-          </div>
-      }})}
+      {loading? (
+          <Spinner/>
+        ) : (
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+          {products && products.map(product => {
+            if (!query || product.productName.includes(query)) {
+              return (
+                <div className="col" key={product._id}>
+                  <Productitem key={product._id} product={product}/>
+                </div>
+              );
+            }
+            return null;
+          })}
+        </div>
+      )}
     </div>
-    </div> 
-    </>
+  </>
   )
 }
 
