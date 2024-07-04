@@ -36,7 +36,7 @@ const Navbar = (props) => {
       <nav className="navbar navbar-expand-lg p-3" style={{ padding:0, margin:0}}>
         <div className="container-fluid">
         <Link className="navbar-brand" to="/" style={{color: txtColor}}>
-            jEWEL
+            PrestigeCraft
           </Link>
           <button
             className="navbar-toggler"
