@@ -1,5 +1,5 @@
 # PrestigeCraft
-## An ecommerce Platform to sell fine Authentice Jewellery 
+## An Ecommerce Platform to sell fine Authentice Jewellery 
 ![image](https://github.com/Sneha0019/PrestigeCraft/assets/112338459/cebdd075-827b-4732-88d0-0bceee140ee6)
 
 
